@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Characters/Portal.tscn" type="PackedScene" id=1]
+[ext_resource path="res://tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Characters/Spawn.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Characters/Fire.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Levels/Level5.gd" type="Script" id=6]
+[ext_resource path="res://Levels/LastScene.tscn" type="PackedScene" id=7]
+
+[node name="Level5" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( -7, 33 )
+
+[node name="Spawn" parent="." instance=ExtResource( 4 )]
+position = Vector2( -43, 19 )
+
+[node name="Fire5" parent="." instance=ExtResource( 5 )]
+position = Vector2( -445, 188 )
+
+[node name="Portal" parent="." instance=ExtResource( 1 )]
+position = Vector2( -545, 732 )
+next_level = ExtResource( 7 )
+
+[node name="Spawn3" parent="." instance=ExtResource( 4 )]
+position = Vector2( -611, 666 )
+
+[node name="Spawn4" parent="." instance=ExtResource( 4 )]
+position = Vector2( -494, 670 )
+
+[node name="Fire6" parent="." instance=ExtResource( 5 )]
+position = Vector2( -495, 692 )
+
+[node name="Fire7" parent="." instance=ExtResource( 5 )]
+position = Vector2( -566, 692 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 8, 8 )
+format = 1
+tile_data = PoolIntArray( 262136, 0, 65536, 196613, 0, 65538, 196617, 0, 1, 196618, 0, 1, 196619, 0, 1, 196620, 0, 1, 196621, 0, 1, 196622, 0, 1, 196626, 0, 65536, 196637, 0, 65538, 327672, 0, 65536, 262149, 0, 65538, 262162, 0, 65536, 262173, 0, 65538, 393208, 0, 65536, 327685, 0, 65538, 327698, 0, 65536, 327709, 0, 65538, 458744, 0, 131072, 458745, 0, 131073, 458746, 0, 131073, 458747, 0, 131073, 458748, 0, 131073, 458749, 0, 131073, 458750, 0, 131073, 458751, 0, 131073, 393216, 0, 131073, 393217, 0, 131073, 393218, 0, 131073, 393219, 0, 131073, 393220, 0, 131073, 393221, 0, 131074, 393234, 0, 131072, 393235, 0, 131073, 393236, 0, 131073, 393237, 0, 131073, 393238, 0, 131073, 393239, 0, 131073, 393240, 0, 131073, 393241, 0, 131073, 393242, 0, 131073, 393243, 0, 131073, 393244, 0, 131073, 393245, 0, 131074, 786465, 0, 1, 1245210, 0, 1, 1638344, 0, 1, 1638354, 0, 1, 1703880, 0, 1, 1703881, 0, 1, 1703882, 0, 1, 1703883, 0, 1, 1703884, 0, 1, 1703885, 0, 1, 1703886, 0, 1, 1703887, 0, 1, 1703888, 0, 1, 1703889, 0, 1, 1703890, 0, 1, 1769419, 2, 2, 1769426, 2, 65536, 1834955, 2, 2, 1834984, 0, 1, 1769492, 0, 1, 1900535, 0, 1, 1966041, 0, 1, 1966049, 0, 1, 1966084, 0, 1, 2293742, 0, 1, 2228236, 0, 1, 5701553, 0, 1, 5701554, 0, 1, 5701576, 0, 1, 5701577, 0, 1, 5767091, 0, 1, 5767092, 0, 1, 5767093, 0, 1, 5767094, 0, 1, 5767095, 0, 1, 5767096, 0, 1, 5767097, 0, 1, 5767098, 0, 65536, 5767101, 0, 1, 5767104, 0, 65538, 5767105, 0, 1, 5767106, 0, 1, 5767107, 0, 1, 5767108, 0, 1, 5767109, 0, 1, 5767110, 0, 1, 5767111, 0, 1, 5832634, 0, 65536, 5832640, 0, 65538, 5898170, 0, 65536, 5898176, 0, 65538, 5963706, 0, 65536, 5963712, 0, 65538, 6029242, 0, 65536, 6029248, 0, 65538, 6094778, 0, 65536, 6094784, 0, 65538, 6160314, 0, 1, 6160315, 0, 1, 6160316, 0, 1, 6160317, 0, 1, 6160318, 0, 1, 6160319, 0, 1, 6160320, 0, 1 )
+
+[node name="Spawn2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 189, 27 )
+
+[node name="Fire" parent="." instance=ExtResource( 5 )]
+position = Vector2( 45, 20 )
+
+[node name="Fire2" parent="." instance=ExtResource( 5 )]
+position = Vector2( -61, 21 )
+
+[node name="Fire3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 147, 21 )
+
+[node name="Fire4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 238, 20 )

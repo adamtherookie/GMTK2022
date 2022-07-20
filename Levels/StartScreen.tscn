@@ -1,0 +1,96 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://pixeloid.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Levels/StartScreen.gd" type="Script" id=2]
+[ext_resource path="res://Characters/player-6.png" type="Texture" id=3]
+[ext_resource path="res://Characters/player-3.png" type="Texture" id=4]
+[ext_resource path="res://Characters/player-5.png" type="Texture" id=5]
+[ext_resource path="res://Characters/player-4.png" type="Texture" id=6]
+[ext_resource path="res://Characters/player-1.png" type="Texture" id=7]
+[ext_resource path="res://Characters/player-2.png" type="Texture" id=8]
+[ext_resource path="res://start-button.png" type="Texture" id=9]
+[ext_resource path="res://tileset.tres" type="TileSet" id=10]
+[ext_resource path="res://Characters/Enemy.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Characters/Fire.tscn" type="PackedScene" id=12]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 1 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[node name="StartScreen" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -1080.0
+margin_top = -376.0
+margin_right = 1104.0
+margin_bottom = 856.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -464.0
+margin_top = 32.0
+margin_right = 465.0
+margin_bottom = 111.0
+custom_fonts/font = SubResource( 1 )
+text = "Dice Roll"
+align = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 0, 224 )
+current = true
+
+[node name="Dice" type="AnimatedSprite" parent="."]
+position = Vector2( 0, 174 )
+scale = Vector2( 5, 5 )
+frames = SubResource( 2 )
+playing = true
+
+[node name="Fire" parent="." instance=ExtResource( 12 )]
+position = Vector2( -88, 320 )
+scale = Vector2( 4, 4 )
+
+[node name="Fire2" parent="." instance=ExtResource( 12 )]
+position = Vector2( 86, 320 )
+scale = Vector2( 4, 4 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 120, 312 )
+scale = Vector2( 3, 3 )
+
+[node name="Enemy" parent="." instance=ExtResource( 11 )]
+position = Vector2( -136, 304 )
+scale = Vector2( 4, 4 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 11 )]
+position = Vector2( -8, 312 )
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = -64.0
+margin_top = 264.0
+margin_right = 64.0
+margin_bottom = 312.0
+texture_normal = ExtResource( 9 )
+expand = true
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 0, -24 )
+scale = Vector2( 5, 5 )
+tile_set = ExtResource( 10 )
+cell_size = Vector2( 8, 8 )
+format = 1
+tile_data = PoolIntArray( 327672, 0, 0, 327673, 0, 1, 327674, 0, 2, 262149, 0, 0, 262150, 0, 1, 262151, 0, 2, 393208, 0, 65536, 393210, 0, 65538, 327685, 0, 65536, 327687, 0, 65538, 458744, 0, 131072, 458745, 0, 131073, 458746, 0, 131074, 393221, 0, 131072, 393222, 0, 131073, 393223, 0, 131074, 524281, 2, 2, 458758, 2, 3, 589817, 2, 2, 589818, 1, 0, 524293, 1, 3, 524294, 2, 3, 655353, 0, 0, 655354, 0, 1, 655355, 0, 1, 655356, 0, 1, 655357, 0, 1, 655358, 0, 1, 655359, 0, 1, 589824, 0, 1, 589825, 0, 1, 589826, 0, 1, 589827, 0, 1, 589828, 0, 1, 589829, 0, 1, 589830, 0, 2, 720889, 0, 65536, 655366, 0, 65538, 786425, 0, 131072, 786426, 0, 131073, 786427, 0, 131073, 786428, 0, 131073, 786429, 0, 131073, 786430, 0, 131073, 786431, 0, 131073, 720896, 0, 131073, 720897, 0, 131073, 720898, 0, 131073, 720899, 0, 131073, 720900, 0, 131073, 720901, 0, 131073, 720902, 0, 131074 )
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
